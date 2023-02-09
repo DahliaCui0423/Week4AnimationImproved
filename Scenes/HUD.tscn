@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 100
+script = ExtResource( 2 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 129.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Back" type="Button" parent="."]
+margin_left = 368.0
+margin_top = 11.0
+margin_right = 463.0
+margin_bottom = 33.0
+text = "SAVE & BACK"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
